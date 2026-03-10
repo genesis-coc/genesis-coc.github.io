@@ -10,17 +10,30 @@
     --color-fondoAldeaOscuro: rgb(127, 149, 70);
     --color-arenaPlaya: rgb(171, 140, 85);
     --color-transparente: rgba(0, 0, 0, 0);
+    --coc-brown-dark: #3a2410;
+    --coc-brown-light: #e6cc9e;
 }
 
 body {
     font-family: 'comic sans ms', cursive, sans-serif;
+    font-size: 18px;
 }
 
 .container-grid {
     display: grid;
-    grid-template-columns: 20% auto 1fr auto 20%;
-    grid-template-rows: 20% auto 1fr auto 20%;
+    grid-template-columns: 10% auto 1fr auto 10%;
+    grid-template-rows: 1% auto 1fr auto 20%;
     padding: 20px;
+}
+
+.contenido {
+    grid-area: 3/3;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--coc-brown-light);
+    border-radius:10px;
+    display:block;
 }
 
 /* Efecto parallax */
@@ -69,7 +82,7 @@ body {
     height: 100px;
     border-radius: 50%;
     background-color: var(--color-transparente);
-    border: 2px solid black;
+    border: 5px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,13 +103,6 @@ body {
 
 .bottom-right {
     grid-area: 4/4;
-}
-
-.contenido {
-    grid-area: 3/3;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 /* Barras del marco */
