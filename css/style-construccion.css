@@ -99,7 +99,7 @@
                 #d48cf7 75%, 
                 #d48cf7 100%
             );
-            background-size: 40px 40px;
+            background-size: 80px 40px;
             animation: progress-flow 1s linear infinite;
             border-right: 3px solid #000;
         }
