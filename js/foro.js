@@ -2,6 +2,19 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+/**
+ * PEGA AQUÍ TU CONFIGURACIÓN DE FIREBASE
+ * 
+ */
+const firebaseConfig = {
+    apiKey: "AIzaSyBIO9an0ZFAMdvJNOuV_Mb6ulZzVego_N8",
+    authDomain: "comentariosgeminis-coc.firebaseapp.com",
+    projectId: "comentariosgeminis-coc",
+    storageBucket: "comentariosgeminis-coc.firebasestorage.app",
+    messagingSenderId: "227180378242",
+    appId: "1:227180378242:web:7ab611322962fba91fdc9b"
+};
+
 // Elementos del DOM
 const loader = document.getElementById('loader');
 const loaderContent = document.getElementById('loaderContent');
@@ -36,8 +49,8 @@ const init = async () => {
         // 1. Obtener configuración (variables inyectadas por el entorno)
         let config;
         try {
-            config = typeof __firebase_config !== 'undefined' 
-                ? (typeof __firebase_config === 'string' ? JSON.parse(__firebase_config) : __firebase_config) 
+            config = typeof __firebase_config !== 'undefined'
+                ? (typeof __firebase_config === 'string' ? JSON.parse(__firebase_config) : __firebase_config)
                 : null;
         } catch (e) {
             throw new Error("Error al procesar la configuración de Firebase.");
@@ -93,7 +106,7 @@ function setupCommentsListener() {
     if (!currentUser || !db) return;
 
     const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'debate');
-    
+
     onSnapshot(colRef, (snapshot) => {
         const comments = [];
         snapshot.forEach(doc => {
@@ -118,7 +131,7 @@ function setupCommentsListener() {
  */
 function renderComments(comments) {
     if (!commentsContainer) return;
-    
+
     commentsContainer.innerHTML = '';
     if (comments.length === 0) {
         commentsContainer.innerHTML = '<p class="text-white/60 text-center italic">El tablón está vacío. ¡Escribe el primer comentario!</p>';
