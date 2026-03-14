@@ -24,30 +24,39 @@
                 <div class="bar-h top"></div>
                 <div class="bar-h bottom"></div>
 
-                <!-- Círculos (Esquinas) -->
+                <!-- Círculos (Esquinas Interactivos) -->
+
+                <!-- Botón Home (Izquierda) -->
                 <a href="index.html" class="corner tl home-btn" title="Volver al inicio">
                     <div class="gold-circle">
-                        <svg viewBox="0 0 24 24">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                         </svg>
                     </div>
                 </a>
-                <div class="corner tr"></div>
-                <div class="corner tr"></div>
+
+                <!-- Botón Debate (Derecha) -->
+                <a href="foro.html" class="corner tr debate-btn" title="Debatir normas">
+                    <div class="gold-circle blue-vibe">
+                        <span class="text-xl">💬</span>
+                    </div>
+                </a>
+
+                <!-- Esquinas decorativas inferiores (Solo visuales) -->
                 <div class="corner bl"></div>
                 <div class="corner br"></div>
 
                 <!-- Pergamino -->
                 <div class="paper">
                     <div class="paper-header text-center">
-                        <div class="flex items-center justify-center gap-4">
-                            <img src="/recursos/img/escudoClanGenesis.webp" alt="Escudo del Clan"
-                                class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        <div class="flex items-center justify-center gap-4 mb-2">
+                            <img src="/recursos/img/escudoClanGenesis.webp" onerror="this.style.display='none'"
+                                alt="Escudo del Clan" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
                         <h1 class="coc-font text-3xl text-amber-900 italic uppercase">Normas Génesis</h1>
                     </div>
 
-                    <!-- Pestañas de Navegación -->
+                    <!-- Pestañas de Navegación Principales -->
                     <div class="tabs-container">
                         <button id="btn1" class="tab-btn active">Art. 1: Guerras Diarias</button>
                         <button id="btn2" class="tab-btn">Art. 2: Liga de Clanes</button>
@@ -56,15 +65,15 @@
                     <div class="scroll-content">
                         <!-- ARTICULO 1 -->
                         <div id="textoNormas1">
-                            <h2 class="article-title">ART.1 GUERRAS DIARIAS</h2>
+                            <h2 class="article-title uppercase italic">ART.1 GUERRAS DIARIAS</h2>
 
-                            <!-- Subpestañas Internas -->
+                            <!-- Subpestañas Internas Art 1 -->
                             <div class="flex gap-2 mb-4">
                                 <button id="btn3"
-                                    class="text-[10px] bg-amber-800 text-white px-3 py-1 rounded-full uppercase font-bold">Registro
+                                    class="sub-tab-btn active text-[10px] px-3 py-1 rounded-full uppercase font-bold">Registro
                                     y Organización</button>
                                 <button id="btn4"
-                                    class="text-[10px] bg-amber-200 text-amber-800 px-3 py-1 rounded-full uppercase font-bold border border-amber-800">Normas
+                                    class="sub-tab-btn inactive text-[10px] px-3 py-1 rounded-full uppercase font-bold border">Normas
                                     y Sanciones</button>
                             </div>
 
@@ -153,19 +162,19 @@
 
                         <!-- ARTICULO 2 -->
                         <div id="textoNormas2" class="ocultar">
-                            <h2 class="article-title">ART.2 LIGA DE CLANES</h2>
+                            <h2 class="article-title uppercase italic">ART.2 LIGA DE CLANES</h2>
 
+                            <!-- Subpestañas Internas Art 2 -->
                             <div class="flex gap-2 mb-4">
                                 <button id="btn5"
-                                    class="text-[10px] bg-amber-800 text-white px-3 py-1 rounded-full uppercase font-bold">Registro
-                                    Y Organización</button>
+                                    class="sub-tab-btn active text-[10px] px-3 py-1 rounded-full uppercase font-bold">Registro</button>
                                 <button id="btn6"
-                                    class="text-[10px] bg-amber-200 text-amber-800 px-3 py-1 rounded-full uppercase font-bold border border-amber-800">Normas
-                                    y Sanciones</button>
+                                    class="sub-tab-btn inactive text-[10px] px-3 py-1 rounded-full uppercase font-bold border">Normas</button>
                             </div>
 
                             <div id="orgReg2">
-                                <h3 class="font-bold text-sm mb-2 uppercase">Registro y Organización</h3>
+                                <h3 class="font-bold text-sm mb-2 uppercase">Registro de Liga</h3>
+                                <p class="text-amber-900 text-sm italic">Normativa de Liga en desarrollo...</p>
                                 <ul class="rule-list">
                                     <li><strong>2.11.- Gerras Mensuales:</strong> Salvo excepciones extraordinarias, el
                                         clan
@@ -195,7 +204,7 @@
                             </div>
 
                             <div id="norSan2" class="ocultar">
-                                <h3 class="font-bold text-sm mb-2 uppercase">Normas y Sanciones</h3>
+                                <h3 class="font-bold text-sm mb-2 uppercase">Normas de Liga</h3>
                                 <ul class="rule-list">
                                     <li><strong>2.13.- Los Ataques:</strong> Los participantes atacarán a sus espejos.
                                         Sólo
@@ -217,14 +226,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- <button class="ok-btn coc-font uppercase italic">¡Entendido!</button> -->
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

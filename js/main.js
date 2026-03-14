@@ -1,61 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Captura de elementos
-    const art1 = document.getElementById('textoNormas1');
-    const art2 = document.getElementById('textoNormas2');
-    const orgReg1 = document.getElementById('orgReg1');
-    const norSan1 = document.getElementById('norSan1');
-    const orgReg2 = document.getElementById('orgReg2');
-    const norSan2 = document.getElementById('norSan2');
+    const get = (id) => document.getElementById(id);
 
-    const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
-    const btn3 = document.getElementById('btn3'); // Reg1
-    const btn4 = document.getElementById('btn4'); // San1
-    const btn5 = document.getElementById('btn5'); // Reg2
-    const btn6 = document.getElementById('btn6'); // San2
+    const views = {
+        art1: get('textoNormas1'),
+        art2: get('textoNormas2'),
+        reg1: get('orgReg1'),
+        san1: get('norSan1'),
+        reg2: get('orgReg2'),
+        san2: get('norSan2')
+    };
 
-    function resetAll() {
-        art1.classList.add('ocultar');
-        art2.classList.add('ocultar');
-        orgReg1.classList.add('ocultar');
-        norSan1.classList.add('ocultar');
-        orgReg2.classList.add('ocultar');
-        norSan2.classList.add('ocultar');
-        btn1.classList.remove('active');
-        btn2.classList.remove('active');
+    const btns = {
+        main1: get('btn1'),
+        main2: get('btn2'),
+        sub1Reg: get('btn3'),
+        sub1San: get('btn4'),
+        sub2Reg: get('btn5'),
+        sub2San: get('btn6')
+    };
+
+    function updateSubTabs(activeBtn, inactiveBtn) {
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+            activeBtn.classList.remove('inactive');
+        }
+        if (inactiveBtn) {
+            inactiveBtn.classList.add('inactive');
+            inactiveBtn.classList.remove('active');
+        }
     }
 
-    // Art.1 Diarias
-    btn1.onclick = () => {
-        resetAll();
-        art1.classList.remove('ocultar');
-        orgReg1.classList.remove('ocultar');
-        btn1.classList.add('active');
+    // Navegación Art 1
+    btns.main1.onclick = () => {
+        views.art1.classList.remove('ocultar');
+        views.art2.classList.add('ocultar');
+        btns.main1.classList.add('active');
+        btns.main2.classList.remove('active');
+        // Reset a la primera subpestaña
+        views.reg1.classList.remove('ocultar');
+        views.san1.classList.add('ocultar');
+        updateSubTabs(btns.sub1Reg, btns.sub1San);
     };
 
-    // Art.2 Ligas
-    btn2.onclick = () => {
-        resetAll();
-        art2.classList.remove('ocultar');
-        orgReg2.classList.remove('ocultar');
-        btn2.classList.add('active');
+    // Navegación Art 2
+    btns.main2.onclick = () => {
+        views.art2.classList.remove('ocultar');
+        views.art1.classList.add('ocultar');
+        btns.main2.classList.add('active');
+        btns.main1.classList.remove('active');
+        // Reset a la primera subpestaña
+        views.reg2.classList.remove('ocultar');
+        views.san2.classList.add('ocultar');
+        updateSubTabs(btns.sub2Reg, btns.sub2San);
     };
 
-    // Sub-botones
-    btn3.onclick = () => {
-        orgReg1.classList.remove('ocultar');
-        norSan1.classList.add('ocultar');
+    // Sub-botones Art 1
+    btns.sub1Reg.onclick = () => {
+        views.reg1.classList.remove('ocultar');
+        views.san1.classList.add('ocultar');
+        updateSubTabs(btns.sub1Reg, btns.sub1San);
     };
-    btn4.onclick = () => {
-        orgReg1.classList.add('ocultar');
-        norSan1.classList.remove('ocultar');
+    btns.sub1San.onclick = () => {
+        views.reg1.classList.add('ocultar');
+        views.san1.classList.remove('ocultar');
+        updateSubTabs(btns.sub1San, btns.sub1Reg);
     };
-    btn5.onclick = () => {
-        orgReg2.classList.remove('ocultar');
-        norSan2.classList.add('ocultar');
+
+    // Sub-botones Art 2
+    btns.sub2Reg.onclick = () => {
+        views.reg2.classList.remove('ocultar');
+        views.san2.classList.add('ocultar');
+        updateSubTabs(btns.sub2Reg, btns.sub2San);
     };
-    btn6.onclick = () => {
-        orgReg2.classList.add('ocultar');
-        norSan2.classList.remove('ocultar');
+    btns.sub2San.onclick = () => {
+        views.reg2.classList.add('ocultar');
+        views.san2.classList.remove('ocultar');
+        updateSubTabs(btns.sub2San, btns.sub2Reg);
     };
 });
