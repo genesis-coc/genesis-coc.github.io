@@ -1,0 +1,49 @@
+:root {
+            --coc-green: #4e9421;
+            --coc-dark-green: #3a7217;
+            --paper: #e6cc9e;
+            --wood: #5d3a1a;
+            --wood-dark: #3a2410;
+            --gold: #fcc200;
+        }
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background: radial-gradient(circle, var(--coc-green) 0%, var(--coc-dark-green) 100%);
+            min-height: 100vh;
+            color: var(--wood-dark);
+            margin: 0; padding: 20px;
+        }
+        .coc-font { font-family: 'Luckiest Guy', cursive; text-shadow: 2px 2px 0px #000; letter-spacing: 1px; }
+        .board-container {
+            background: var(--paper); border: 6px solid var(--wood); border-radius: 25px;
+            box-shadow: 0 12px 0 var(--wood-dark), inset 0 0 40px rgba(0,0,0,0.15);
+            max-width: 700px; margin: 0 auto; overflow: hidden;
+        }
+        .tabs { display: flex; background: rgba(0,0,0,0.15); border-bottom: 4px solid var(--wood); }
+        .tab-btn {
+            flex: 1; padding: 18px; font-weight: 900; text-transform: uppercase;
+            font-style: italic; font-size: 0.85rem; background: #ab8c55;
+            color: rgba(255,255,255,0.8); border: none; cursor: pointer;
+        }
+        .tab-btn.active { background: var(--paper); color: var(--wood-dark); box-shadow: inset 0 -6px 0 var(--gold); }
+        .event-card {
+            background: rgba(0, 0, 0, 0.05); border: 3px solid var(--wood);
+            border-radius: 18px; margin-bottom: 15px; overflow: hidden;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1); transition: transform 0.1s;
+        }
+        .event-header {
+            background: var(--wood); color: white; padding: 12px 15px;
+            display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+        }
+        .event-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: white; }
+        .event-card.expanded .event-body { max-height: 2000px; }
+        .player-row { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 12px 15px; display: flex; align-items: center; gap: 12px; }
+        .status-badge {
+            width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; font-size: 1rem; border: 2px solid rgba(0,0,0,0.1);
+        }
+        .bg-ascenso { background: #dcfce7; color: #15803d; border-color: #15803d; }
+        .bg-penalizacion { background: #fee2e2; color: #b91c1c; border-color: #b91c1c; }
+        .bg-degradacion { background: #ffedd5; color: #c2410c; border-color: #c2410c; }
+        .ocultar { display: none; }
+        .loading { text-align: center; padding: 40px; color: white; font-weight: bold; }

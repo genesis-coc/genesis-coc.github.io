@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatus del Clan - Génesis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style-estatus.css">
+    <link rel="icon" type="image/webp" href="/recursos/img/escudoClanGenesis.webp">
+</head>
+<body>
+
+    <div class="max-w-2xl mx-auto mb-6 flex justify-between items-center px-2">
+        <a href="normas.html" class="bg-amber-800 text-white px-5 py-2 rounded-xl font-bold flex items-center gap-2">
+            <span>⬅</span> VOLVER
+        </a>
+        <h1 class="coc-font text-2xl text-white italic uppercase leading-none">Bitácora de Estatus</h1>
+    </div>
+
+    <div class="board-container">
+        <div class="tabs">
+            <button id="btnDiarias" class="tab-btn active">Guerras Diarias</button>
+            <button id="btnLiga" class="tab-btn">Liga de Clanes</button>
+        </div>
+
+        <div id="loading" class="loading">Sincronizando con la aldea...</div>
+        
+        <div id="contentDiarias" class="p-5 max-h-[75vh] overflow-y-auto"></div>
+        <div id="contentLiga" class="p-5 max-h-[75vh] overflow-y-auto ocultar"></div>
+
+        <div class="bg-amber-900/10 p-3 text-center border-t-2 border-dashed border-amber-900/20">
+            <p class="text-[9px] font-black uppercase text-amber-900/50 italic">Bitácora oficial actualizada en tiempo real</p>
+        </div>
+    </div>
+
+    <script type="module" src="/js/estatus.js"></script>
+</body>
+</html>

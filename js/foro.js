@@ -12,7 +12,7 @@ const firebaseConfig = {
     appId: "1:227180378242:web:7ab611322962fba91fdc9b"
 };
 
-const CLAVE_CLAN = "Genesis_2026_Elite"; // DEBE coincidir con la de las reglas
+const CLAVE_CLAN = "Genesis_Elite_2026"; // DEBE coincidir con la de las reglas
 
 const loader = document.getElementById('loader');
 const commentsContainer = document.getElementById('commentsContainer');

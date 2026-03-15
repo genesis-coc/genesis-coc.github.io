@@ -144,7 +144,7 @@ body {
 }
 
 /* --- BOTÓN NORMAS (MANTENIMIENTO) --- */
-.rules-btn {
+/* .rules-btn {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -177,7 +177,7 @@ body {
 .rules-btn .coc-font {
     text-shadow: 2px 2px 0px #000;
     letter-spacing: 1px;
-}
+} */
 
 /* AJUSTE PARA MÓVIL: Evita solapamiento con el título */
 @media (max-width: 768px) {

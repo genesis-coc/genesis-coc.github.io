@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Líder - Génesis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style-admin.css">
+    <link rel="icon" type="image/webp" href="/recursos/img/escudoClanGenesis.webp">
+</head>
+
+<body>
+
+    <!-- Cuadro de Mensaje Personalizado -->
+    <div id="customMsg"></div>
+
+    <!-- PANTALLA DE LOGIN -->
+    <div id="loginSection" class="coc-panel p-8 text-center">
+        <!-- BOTÓN VOLVER -->
+        <div class="flex justify-start mb-6">
+            <a href="normas.html"
+                class="bg-amber-800 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 text-xs transition-transform active:scale-95">
+                <span>⬅</span> VOLVER
+            </a>
+        </div>
+        <h1 class="coc-font text-3xl text-amber-900 mb-6 uppercase italic">Acceso Líder</h1>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-[10px] font-black uppercase text-amber-900/60 mb-1">Nombre de
+                    Comandante</label>
+                <input type="text" id="userInput" class="input-coc" placeholder="Usuario...">
+            </div>
+            <div>
+                <label class="block text-[10px] font-black uppercase text-amber-900/60 mb-1">Código de Aldea</label>
+                <input type="password" id="passInput" class="input-coc" placeholder="••••••••">
+            </div>
+            <button id="loginBtn"
+                class="w-full btn-coc coc-font py-4 rounded-xl text-xl uppercase italic tracking-wider mt-4">
+                Entrar al Panel
+            </button>
+        </div>
+    </div>
+
+    <!-- PANEL DE ADMINISTRACIÓN -->
+    <div id="adminForm" class="coc-panel p-6 ocultar" style="max-width: 700px;">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="coc-font text-2xl text-amber-900 uppercase italic">Bitácora de Estatus</h1>
+            <button onclick="location.reload()"
+                class="bg-amber-900 text-white text-[10px] font-bold px-3 py-1 rounded-lg">Salir</button>
+        </div>
+
+        <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/5 p-4 rounded-xl">
+                <div>
+                    <label class="block text-[10px] font-black uppercase mb-1">Categoría</label>
+                    <select id="eventType" class="input-coc py-2">
+                        <option value="diaria">Guerra Diaria</option>
+                        <option value="liga">Liga de Clanes</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black uppercase mb-1">Fecha</label>
+                    <input type="text" id="eventDate" placeholder="Ej: 15 Mar 2026" class="input-coc py-2">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-black uppercase mb-1">Nombre del Enfrentamiento</label>
+                    <input type="text" id="eventTitle" placeholder="Ej: Génesis vs Mega Hunters" class="input-coc py-2">
+                </div>
+            </div>
+
+            <div class="bg-black/5 p-4 rounded-xl">
+                <h3 class="coc-font text-lg mb-4 text-amber-900 uppercase italic">Guerreros Afectados</h3>
+                <div id="playersList" class="space-y-3 mb-4 max-h-[30vh] overflow-y-auto pr-2">
+                    <!-- Filas dinámicas -->
+                </div>
+                <button id="addPlayerBtn" class="btn-add btn-coc py-2 px-4 rounded-lg text-xs font-bold uppercase">
+                    + Añadir Guerrero
+                </button>
+            </div>
+
+            <button id="publishBtn"
+                class="w-full btn-coc coc-font py-4 rounded-xl text-xl uppercase italic tracking-widest">
+                Publicar en la Bitácora
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+
+</html>

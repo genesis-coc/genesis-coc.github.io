@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Montserrat','Ubuntu', sans-serif;
+    font-family: 'Montserrat', 'Ubuntu', sans-serif;
     margin: 0;
     overflow-x: hidden;
     background-color: #1a1a1a;
@@ -90,7 +90,7 @@ body {
 }
 
 /* Solo mostrar el punto dorado decorativo si NO tiene contenido interno */
-.corner:not(.home-btn):not(.debate-btn)::after {
+.corner:not(.home-btn):not(.debate-btn):not(.estatus-btn):not(.admin-btn)::after {
     content: '';
     width: 20px;
     height: 20px;
@@ -132,24 +132,16 @@ body {
     /* Evita desbordes de sombras en algunos motores */
 }
 
-/* Ajuste específico para el emoji en el círculo */
-.gold-circle span {
-    line-height: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -1px;
-    /* Corrección de balanceo visual para Chromium */
-}
-
-.gold-circle svg {
-    width: 22px;
-    height: 22px;
-    fill: #3a2410;
-}
-
 .blue-vibe {
     background: #3b82f6 !important;
+}
+
+.ruby-vibe {
+    background: #991b1b !important;
+}
+
+.dark-vibe{
+    background: #334155 !important;
 }
 
 /* Pergamino */
@@ -191,7 +183,7 @@ body {
 }
 
 .border {
-    border:1px solid var(--arena-playa);
+    border: 1px solid var(--arena-playa);
 }
 
 .tab-btn.active {
