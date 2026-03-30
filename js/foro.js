@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-// CONFIGURACIÓN DE TU FIREBASE (Sustituye con tus datos reales si son distintos)
 const firebaseConfig = {
     apiKey: "AIzaSyBIO9an0ZFAMdvJNOuV_Mb6ulZzVego_N8",
     authDomain: "comentariosgeminis-coc.firebaseapp.com",
@@ -12,7 +11,7 @@ const firebaseConfig = {
     appId: "1:227180378242:web:7ab611322962fba91fdc9b"
 };
 
-const CLAVE_CLAN = "Genesis_Elite_2026"; // DEBE coincidir con la de las reglas
+const LLAVE_FORO = "Foro_Publico_Genesis"; 
 
 const loader = document.getElementById('loader');
 const commentsContainer = document.getElementById('commentsContainer');
@@ -47,11 +46,9 @@ const init = async () => {
 
 function setupCommentsListener() {
     const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'debate');
-
     onSnapshot(colRef, (snapshot) => {
         const comments = [];
         snapshot.forEach(doc => comments.push({ id: doc.id, ...doc.data() }));
-        
         comments.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
         
         commentsContainer.innerHTML = '';
@@ -76,6 +73,7 @@ function setupCommentsListener() {
 }
 
 function setupForm() {
+    if(!sendBtn) return;
     sendBtn.onclick = async () => {
         const author = userNameInput.value.trim();
         const text = commentTextInput.value.trim();
@@ -92,12 +90,12 @@ function setupForm() {
                 text: text,
                 createdAt: serverTimestamp(),
                 userId: currentUser.uid,
-                clave_secreta: CLAVE_CLAN // LA LLAVE QUE ABRE LAS REGLAS
+                clave_secreta: LLAVE_FORO 
             });
             commentTextInput.value = '';
         } catch (error) {
-            console.error("Error de permisos:", error);
-            alert("Acceso denegado. Solo la versión oficial del clan puede publicar.");
+            console.error("Error:", error);
+            alert("Error al publicar el comentario.");
         } finally {
             sendBtn.disabled = false;
             sendBtn.innerText = 'Publicar Comentario';

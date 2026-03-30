@@ -6,7 +6,6 @@
     <title>Debate de Normas - Génesis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <!-- Enlazamos el CSS externo -->
     <link rel="stylesheet" href="css/styleForo.css">
     <link rel="icon" type="image/webp" href="/recursos/img/escudoClanGenesis.webp">
 </head>
@@ -16,38 +15,33 @@
     <div id="loader" class="loading-overlay">
         <div id="loaderContent" class="text-white coc-font text-2xl animate-pulse text-center px-6">
             <p>Cargando Clan...</p>
-            <p class="text-xs mt-2 opacity-50 font-sans tracking-normal italic">Sincronizando con la aldea</p>
         </div>
     </div>
 
     <div class="max-w-2xl mx-auto">
         <div class="flex justify-between items-center mb-8">
-            <a href="index.html" class="bg-amber-800 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-transform hover:scale-105 active:scale-95">
+            <a href="index.html" class="bg-amber-800 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2">
                 <span>⬅</span> VOLVER
             </a>
             <h1 class="coc-font text-3xl text-white uppercase italic tracking-wider">Foro Génesis</h1>
         </div>
 
-        <!-- Formulario de Comentarios -->
+        <!-- Formulario Abierto -->
         <div class="bg-white/20 p-6 rounded-2xl border-4 border-white/30 mb-8 backdrop-blur-sm">
             <div class="space-y-4">
-                <input type="text" id="userName" placeholder="Tu nombre en CoC..." 
-                    class="w-full p-3 rounded-xl border-2 border-amber-900 font-bold focus:outline-none focus:ring-4 focus:ring-blue-500/50 bg-amber-50">
-                <textarea id="commentText" placeholder="¿Qué piensas sobre las normas?" rows="3"
-                    class="w-full p-3 rounded-xl border-2 border-amber-900 font-bold focus:outline-none focus:ring-4 focus:ring-blue-500/50 bg-amber-50"></textarea>
-                <button id="sendBtn" class="w-full btn-coc text-white coc-font py-4 rounded-xl text-xl uppercase italic tracking-widest">
+                <input type="text" id="userName" placeholder="Tu nombre en el juego..." 
+                    class="w-full p-3 rounded-xl border-2 border-amber-900 font-bold focus:outline-none bg-amber-50">
+                <textarea id="commentText" placeholder="Escribe tu mensaje aquí..." rows="3"
+                    class="w-full p-3 rounded-xl border-2 border-amber-900 font-bold focus:outline-none bg-amber-50"></textarea>
+                <button id="sendBtn" class="w-full btn-coc text-white coc-font py-4 rounded-xl text-xl uppercase italic">
                     Publicar Comentario
                 </button>
             </div>
         </div>
 
-        <!-- Contenedor de Comentarios -->
-        <div id="commentsContainer" class="space-y-6 pb-20">
-            <!-- Cargados por JS -->
-        </div>
+        <div id="commentsContainer" class="space-y-6 pb-20"></div>
     </div>
 
-    <!-- Enlazamos el JS externo como módulo -->
     <script type="module" src="js/foro.js"></script>
 </body>
 </html>

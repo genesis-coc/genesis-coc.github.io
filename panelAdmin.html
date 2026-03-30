@@ -19,19 +19,19 @@
 
     <div id="customMsg"></div>
 
-    <!-- PANEL DE ADMINISTRACIÓN DIRECTO -->
+    <!-- PANEL DIRECTO (Acceso libre, seguridad en el botón de envío) -->
     <div id="adminForm" class="coc-panel p-6">
         <div class="flex justify-between items-center mb-6">
-            <div>
-
-                <h1 class="coc-font text-2xl text-amber-900 uppercase italic">Bitácora de Guerra</h1>
+            <div class="flex items-center gap-3">
+                <a href="index.html" title="Volver">
+                    <img src="/recursos/img/escudoClanGenesis.webp" alt="Escudo" class="w-12 h-12 object-contain hover:scale-110 transition-transform">
+                </a>
+                <h1 class="coc-font text-2xl text-amber-900 uppercase italic leading-none">Bitácora de Guerra</h1>
             </div>
-            <a href="index.html"
-                class="bg-amber-800 text-white text-[10px] font-bold px-3 py-1 rounded-lg border-b-2 border-black">VOLVER</a>
+            <a href="index.html" class="bg-amber-800 text-white text-[10px] font-bold px-3 py-1 rounded-lg border-b-2 border-black">VOLVER</a>
         </div>
 
         <div class="space-y-6">
-            <!-- Datos del Evento -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/5 p-4 rounded-xl">
                 <div>
                     <label class="block text-[10px] font-black uppercase mb-1">Categoría</label>
@@ -46,39 +46,28 @@
                 </div>
                 <div class="md:col-span-2">
                     <label class="block text-[10px] font-black uppercase mb-1">Nombre del Enfrentamiento</label>
-                    <input type="text" id="eventTitle" placeholder="Ej: Génesis vs Los Invencibles"
-                        class="input-coc py-2">
+                    <input type="text" id="eventTitle" placeholder="Ej: Génesis vs Enemigo" class="input-coc py-2">
                 </div>
             </div>
 
-            <!-- Jugadores -->
             <div class="bg-black/5 p-4 rounded-xl">
-                <h3 class="coc-font text-lg mb-4 text-amber-900 uppercase italic">Guerreros y Cambios</h3>
-                <div id="playersList" class="space-y-3 mb-4 max-h-[40vh] overflow-y-auto pr-2">
-                    <!-- Filas dinámicas -->
-                </div>
-                <button id="addPlayerBtn" class="btn-add btn-coc py-2 px-4 rounded-lg text-xs font-bold uppercase">
-                    + Añadir Guerrero
-                </button>
+                <h3 class="coc-font text-lg mb-4 text-amber-900 uppercase italic">Guerreros Afectados</h3>
+                <div id="playersList" class="space-y-3 mb-4 max-h-[40vh] overflow-y-auto pr-2"></div>
+                <button id="addPlayerBtn" class="btn-add btn-coc py-2 px-4 rounded-lg text-xs font-bold uppercase">+ Añadir Guerrero</button>
             </div>
 
-            <!-- Firma de Comandante (Llave para Firebase) -->
+            <!-- FIRMA OBLIGATORIA PARA PUBLICAR -->
             <div class="bg-amber-900/10 p-4 rounded-xl border-2 border-amber-900/20">
-                <label
-                    class="block text-[10px] font-black uppercase text-amber-900 mb-2 text-center tracking-widest">Firma
-                    de Comandante</label>
-                <input type="password" id="masterKey" placeholder="Clave secreta"
-                    class="input-coc text-center border-amber-900/40">
+                <label class="block text-[10px] font-black uppercase text-amber-900 mb-2 text-center tracking-widest">Firma de Comandante</label>
+                <input type="password" id="masterKey" placeholder="Introduce la llave secreta" class="input-coc text-center border-amber-900/40">
             </div>
 
-            <button id="publishBtn"
-                class="w-full btn-coc coc-font py-4 rounded-xl text-xl uppercase italic tracking-widest">
+            <button id="publishBtn" class="w-full btn-coc coc-font py-4 rounded-xl text-xl uppercase italic tracking-widest">
                 Publicar Cambios
             </button>
         </div>
     </div>
 
-    <!-- Carga del archivo lógico -->
     <script type="module" src="js/admin.js"></script>
 </body>
 
